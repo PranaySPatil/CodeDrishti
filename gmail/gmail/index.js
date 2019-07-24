@@ -18956,435 +18956,7 @@
 
 
 var dotSrc = document.getElementById("graph").getAttribute('data-src');;
-// dotSrc = `strict digraph "dependency-cruiser output"{ 
 
-//     ordering=out 
-
-//     rankdir=LR 
-
-//     splines=true 
-
-//     overlap=false 
-
-//     nodesep=0.16 
-
-//     ranksep=0.18 
-
-//     fontname="Helvetica-bold" 
-
-//     fontsize=9 
-
-//     style="rounded,bold,filled" 
-
-//     fillcolor="#ffffff" 
-
-//     compound=true 
-
-//     node [shape=box style="rounded, filled" fillcolor="#ffffcc" height=0.2 fontname=Helvetica fontsize=9] 
-
-//     edge [color="#00000077" penwidth=2.0 arrowhead=normal fontname=Helvetica fontsize=9] 
-
-  
-
-//     subgraph "cluster_E2ETests" {label="E2ETests" "E2ETests/failure.e2e.js" [label="failure.e2e.js" URL="E2ETests/failure.e2e.js"] } 
-
-//     subgraph "cluster_E2ETests" {label="E2ETests" "E2ETests/fileshare.e2e.js" [label="fileshare.e2e.js" URL="E2ETests/fileshare.e2e.js"] } 
-
-//     subgraph "cluster_E2ETests" {label="E2ETests" "E2ETests/jenkins.e2e.js" [label="jenkins.e2e.js" URL="E2ETests/jenkins.e2e.js"] } 
-
-//     subgraph "cluster_E2ETests" {label="E2ETests" "E2ETests/vsts.e2e.js" [label="vsts.e2e.js" URL="E2ETests/vsts.e2e.js"] } 
-
-//     subgraph "cluster_Engine" {label="Engine" "Engine/artifactEngine.js" [label="artifactEngine.js" URL="Engine/artifactEngine.js"] } 
-
-//     subgraph "cluster_Engine" {label="Engine" "Engine/artifactEngineOptions.js" [label="artifactEngineOptions.js" URL="Engine/artifactEngineOptions.js"] } 
-
-//     subgraph "cluster_Engine" {label="Engine" "Engine/cilogger.js" [label="cilogger.js" URL="Engine/cilogger.js"] } 
-
-//     subgraph "cluster_Engine" {label="Engine" "Engine/index.js" [label="index.js" URL="Engine/index.js"] } 
-
-//     subgraph "cluster_Engine" {label="Engine" "Engine/logger.js" [label="logger.js" URL="Engine/logger.js"] } 
-
-//     subgraph "cluster_Engine" {label="Engine" "Engine/worker.js" [label="worker.js" URL="Engine/worker.js"] } 
-
-//     subgraph "cluster_EngineTests" {label="EngineTests" "EngineTests/artifactEngineTests.js" [label="artifactEngineTests.js" URL="EngineTests/artifactEngineTests.js"] } 
-
-//     subgraph "cluster_IntegrationTests" {label="IntegrationTests" "IntegrationTests/jenkinsTests.js" [label="jenkinsTests.js" URL="IntegrationTests/jenkinsTests.js"] } 
-
-//     subgraph "cluster_IntegrationTests" {label="IntegrationTests" "IntegrationTests/proxyTests.js" [label="proxyTests.js" URL="IntegrationTests/proxyTests.js"] 
-
-// } 
-
-//     subgraph "cluster_Models" {label="Models" "Models/artifactDownloadTicket.js" [label="artifactDownloadTicket.js" URL="Models/artifactDownloadTicket.js"] } 
-
-//     subgraph "cluster_Models" {label="Models" "Models/artifactItem.js" [label="artifactItem.js" URL="Models/artifactItem.js"] } 
-
-//     subgraph "cluster_Models" {label="Models" "Models/artifactprovider.js" [label="artifactprovider.js" URL="Models/artifactprovider.js"] } 
-
-//     subgraph "cluster_Models" {label="Models" "Models/constants.js" [label="constants.js" URL="Models/constants.js"] } 
-
-//     subgraph "cluster_Models" {label="Models" "Models/index.js" [label="index.js" URL="Models/index.js"] } 
-
-//     subgraph "cluster_Models" {label="Models" "Models/itemType.js" [label="itemType.js" URL="Models/itemType.js"] } 
-
-//     subgraph "cluster_Models" {label="Models" "Models/ticketState.js" [label="ticketState.js" URL="Models/ticketState.js"] } 
-
-//     subgraph "cluster_PerfTests" {label="PerfTests" "PerfTests/fileshare.perf.js" [label="fileshare.perf.js" URL="PerfTests/fileshare.perf.js"] } 
-
-//     subgraph "cluster_PerfTests" {label="PerfTests" "PerfTests/jenkins.perf.js" [label="jenkins.perf.js" URL="PerfTests/jenkins.perf.js"] } 
-
-//     subgraph "cluster_PerfTests" {label="PerfTests" "PerfTests/vsts.perf.js" [label="vsts.perf.js" URL="PerfTests/vsts.perf.js"] } 
-
-//     subgraph "cluster_Providers" {label="Providers" "Providers/filesystemProvider.js" [label="filesystemProvider.js" URL="Providers/filesystemProvider.js"] } 
-
-//     subgraph "cluster_Providers" {label="Providers" "Providers/index.js" [label="index.js" URL="Providers/index.js"] } 
-
-//     subgraph "cluster_Providers" {label="Providers" "Providers/stubProvider.js" [label="stubProvider.js" URL="Providers/stubProvider.js"] } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" "Providers/typed-rest-client/Handlers.js" [label="Handlers.js" URL="Providers/typed-rest-client/Handlers.js"] } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" "Providers/typed-rest-client/HttpClient.js" [label="HttpClient.js" URL="Providers/typed-rest-client/HttpClient.js"] } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" "Providers/typed-rest-client/Index.js" [label="Index.js" URL="Providers/typed-rest-client/Index.js"] } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" "Providers/typed-rest-client/Interfaces.js" [label="Interfaces.js" URL="Providers/typed-rest-client/Interfaces.js"] } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" "Providers/typed-rest-client/RestClient.js" [label="RestClient.js" URL="Providers/typed-rest-client/RestClient.js"] } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" "Providers/typed-rest-client/Util.js" [label="Util.js" URL="Providers/typed-rest-client/Util.js"] } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" subgraph "cluster_Providers/typed-rest-client/handlers" {label="handlers" "Providers/typed-rest-client/handlers/basiccreds.js" [label="basiccreds.js" URL="Providers/typed-rest-client/handlers/basiccreds.js"] } } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" subgraph "cluster_Providers/typed-rest-client/handlers" {label="handlers" "Providers/typed-rest-client/handlers/bearertoken.js" [label="bearertoken.js" URL="Providers/typed-rest-client/handlers/bearertoken.js"] } } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" subgraph "cluster_Providers/typed-rest-client/handlers" {label="handlers" "Providers/typed-rest-client/handlers/ntlm.js" [label="ntlm.js" URL="Providers/typed-rest-client/handlers/ntlm.js"] } } 
-
-// } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" subgraph "cluster_Providers/typed-rest-client/handlers" {label="handlers" "Providers/typed-rest-client/handlers/personalaccesstoken.js" [label="personalaccesstoken.js" URL="Providers/typed-rest-client/handlers/personalaccesstoken.js"] } } } 
-
-//     subgraph "cluster_Providers" {label="Providers" subgraph "cluster_Providers/typed-rest-client" {label="typed-rest-client" subgraph "cluster_Providers/typed-rest-client/opensource" {label="opensource" subgraph "cluster_Providers/typed-rest-client/opensource/node-http-ntlm" {label="node-http-ntlm" "Providers/typed-rest-client/opensource/node-http-ntlm/ntlm.js" [label="ntlm.js" URL="Providers/typed-rest-client/opensource/node-http-ntlm/ntlm.js"] } } } } 
-
-//     subgraph "cluster_Providers" {label="Providers" "Providers/webClient.js" [label="webClient.js" URL="Providers/webClient.js"] } 
-
-//     subgraph "cluster_Providers" {label="Providers" "Providers/webClientFactory.js" [label="webClientFactory.js" URL="Providers/webClientFactory.js"] } 
-
-//     subgraph "cluster_Providers" {label="Providers" "Providers/webProvider.js" [label="webProvider.js" URL="Providers/webProvider.js"] } 
-
-//     subgraph "cluster_Providers" {label="Providers" "Providers/zipProvider.js" [label="zipProvider.js" URL="Providers/zipProvider.js"] } 
-
-//     subgraph "cluster_ProvidersTests" {label="ProvidersTests" "ProvidersTests/filesystemProviderTests.js" [label="filesystemProviderTests.js" URL="ProvidersTests/filesystemProviderTests.js"] } 
-
-//     subgraph "cluster_ProvidersTests" {label="ProvidersTests" "ProvidersTests/webProviderTests.js" [label="webProviderTests.js" URL="ProvidersTests/webProviderTests.js"] } 
-
-//     subgraph "cluster_Store" {label="Store" "Store/artifactItemStore.js" [label="artifactItemStore.js" URL="Store/artifactItemStore.js"] } 
-
-//     subgraph "cluster_Store" {label="Store" "Store/index.js" [label="index.js" URL="Store/index.js"] } 
-
-//     subgraph "cluster_StoreTests" {label="StoreTests" "StoreTests/artifactItemStoreTests.js" [label="artifactItemStoreTests.js" URL="StoreTests/artifactItemStoreTests.js"] } 
-
-//     "assert" [label="assert" color="grey" fontcolor="grey" ] 
-
-//     subgraph "cluster_coverage" {label="coverage" "coverage/block-navigation.js" [label="block-navigation.js" URL="coverage/block-navigation.js"] } 
-
-//     subgraph "cluster_coverage" {label="coverage" subgraph "cluster_coverage/lcov-report" {label="lcov-report" "coverage/lcov-report/block-navigation.js" [label="block-navigation.js" URL="coverage/lcov-report/block-navigation.js"] } } 
-
-//     subgraph "cluster_coverage" {label="coverage" subgraph "cluster_coverage/lcov-report" {label="lcov-report" "coverage/lcov-report/prettify.js" [label="prettify.js" URL="coverage/lcov-report/prettify.js"] } } 
-
-//     subgraph "cluster_coverage" {label="coverage" subgraph "cluster_coverage/lcov-report" {label="lcov-report" "coverage/lcov-report/sorter.js" [label="sorter.js" URL="coverage/lcov-report/sorter.js"] } } 
-
-//     subgraph "cluster_coverage" {label="coverage" "coverage/prettify.js" [label="prettify.js" URL="coverage/prettify.js"] } 
-
-//     subgraph "cluster_coverage" {label="coverage" "coverage/sorter.js" [label="sorter.js" URL="coverage/sorter.js"] } 
-
-//     "crypto" [label="crypto" color="grey" fontcolor="grey" ] 
-
-//     "fs" [label="fs" color="grey" fontcolor="grey" ] 
-
-//     "http" [label="http" color="grey" fontcolor="grey" ] 
-
-//     "https" [label="https" color="grey" fontcolor="grey" ] 
-
-//     "net" [label="net" color="grey" fontcolor="grey" ] 
-
-//     "package.json" [label="package.json" fillcolor="#ffee44" URL="package.json"] 
-
-//     "path" [label="path" color="grey" fontcolor="grey" ] 
-
-//     "stream" [label="stream" color="grey" fontcolor="grey" ] 
-
-//     "underscore" [label="underscore" color="red" fontcolor="red" ] 
-
-//     "url" [label="url" color="grey" fontcolor="grey" ] 
-
-//     "zlib" [label="zlib" color="grey" fontcolor="grey" ] 
-
-  
-
-//     "E2ETests/failure.e2e.js" -> "Engine/index.js" 
-
-//     "E2ETests/failure.e2e.js" -> "Providers/index.js" 
-
-//     "E2ETests/failure.e2e.js" -> "Providers/typed-rest-client/handlers/personalaccesstoken.js" 
-
-//     "E2ETests/failure.e2e.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/failure.e2e.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/fileshare.e2e.js" -> "Engine/index.js" 
-
-//     "E2ETests/fileshare.e2e.js" -> "Providers/index.js" 
-
-//     "E2ETests/fileshare.e2e.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/fileshare.e2e.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/fileshare.e2e.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/jenkins.e2e.js" -> "Engine/index.js" 
-
-//     "E2ETests/jenkins.e2e.js" -> "Providers/index.js" 
-
-//     "E2ETests/jenkins.e2e.js" -> "Providers/typed-rest-client/handlers/basiccreds.js" 
-
-//     "E2ETests/jenkins.e2e.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/jenkins.e2e.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/jenkins.e2e.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/vsts.e2e.js" -> "Engine/index.js" 
-
-//     "E2ETests/vsts.e2e.js" -> "Providers/index.js" 
-
-//     "E2ETests/vsts.e2e.js" -> "Providers/typed-rest-client/handlers/personalaccesstoken.js" 
-
-//     "E2ETests/vsts.e2e.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/vsts.e2e.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "E2ETests/vsts.e2e.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "Engine/artifactEngine.js" -> "Models/index.js" 
-
-//     "Engine/artifactEngine.js" -> "Store/artifactItemStore.js" 
-
-//     "Engine/artifactEngine.js" -> "Engine/artifactEngineOptions.js" 
-
-//     "Engine/artifactEngine.js" -> "Engine/cilogger.js" 
-
-//     "Engine/artifactEngine.js" -> "Engine/logger.js" 
-
-//     "Engine/artifactEngine.js" -> "Engine/worker.js" 
-
-//     "Engine/artifactEngine.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "Engine/cilogger.js" -> "package.json" 
-
-//     "Engine/index.js" -> "Engine/artifactEngine.js" 
-
-//     "Engine/index.js" -> "Engine/artifactEngineOptions.js" 
-
-//     "Engine/logger.js" -> "Models/index.js" 
-
-//     "Engine/logger.js" -> "Models/ticketState.js" 
-
-//     "Engine/logger.js" -> "Engine/cilogger.js" 
-
-//     "Engine/worker.js" -> "Engine/logger.js" 
-
-//     "EngineTests/artifactEngineTests.js" -> "Engine/index.js" 
-
-//     "EngineTests/artifactEngineTests.js" -> "Providers/index.js" 
-
-//     "EngineTests/artifactEngineTests.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "IntegrationTests/jenkinsTests.js" -> "Engine/index.js" 
-
-//     "IntegrationTests/jenkinsTests.js" -> "Models/ticketState.js" 
-
-//     "IntegrationTests/jenkinsTests.js" -> "Providers/index.js" 
-
-//     "IntegrationTests/jenkinsTests.js" -> "Providers/typed-rest-client/handlers/basiccreds.js" 
-
-//     "IntegrationTests/jenkinsTests.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "IntegrationTests/proxyTests.js" -> "Engine/index.js" 
-
-//     "IntegrationTests/proxyTests.js" -> "package.json" 
-
-//     "IntegrationTests/proxyTests.js" -> "Providers/index.js" 
-
-//     "IntegrationTests/proxyTests.js" -> "Providers/typed-rest-client/handlers/basiccreds.js" 
-
-//     "IntegrationTests/proxyTests.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "IntegrationTests/proxyTests.js" -> "http" [color="grey" penwidth=1.0] 
-
-//     "IntegrationTests/proxyTests.js" -> "net" [color="grey" penwidth=1.0] 
-
-//     "Models/index.js" -> "Models/artifactDownloadTicket.js" 
-
-//     "Models/index.js" -> "Models/artifactItem.js" 
-
-//     "Models/index.js" -> "Models/constants.js" 
-
-//     "Models/index.js" -> "Models/itemType.js" 
-
-//     "Models/index.js" -> "Models/ticketState.js" 
-
-//     "PerfTests/fileshare.perf.js" -> "Engine/index.js" 
-
-//     "PerfTests/fileshare.perf.js" -> "Models/itemType.js" 
-
-//     "PerfTests/fileshare.perf.js" -> "Models/ticketState.js" 
-
-//     "PerfTests/fileshare.perf.js" -> "Providers/index.js" 
-
-//     "PerfTests/fileshare.perf.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "PerfTests/fileshare.perf.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "PerfTests/jenkins.perf.js" -> "Engine/index.js" 
-
-//     "PerfTests/jenkins.perf.js" -> "Models/itemType.js" 
-
-//     "PerfTests/jenkins.perf.js" -> "Models/ticketState.js" 
-
-//     "PerfTests/jenkins.perf.js" -> "Providers/index.js" 
-
-//     "PerfTests/jenkins.perf.js" -> "Providers/typed-rest-client/handlers/basiccreds.js" 
-
-//     "PerfTests/jenkins.perf.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "PerfTests/jenkins.perf.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "PerfTests/jenkins.perf.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "PerfTests/vsts.perf.js" -> "Engine/index.js" 
-
-//     "PerfTests/vsts.perf.js" -> "Models/itemType.js" 
-
-//     "PerfTests/vsts.perf.js" -> "Models/ticketState.js" 
-
-//     "PerfTests/vsts.perf.js" -> "Providers/index.js" 
-
-//     "PerfTests/vsts.perf.js" -> "Providers/typed-rest-client/handlers/personalaccesstoken.js" 
-
-//     "PerfTests/vsts.perf.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "PerfTests/vsts.perf.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "Providers/filesystemProvider.js" -> "Engine/logger.js" 
-
-//     "Providers/filesystemProvider.js" -> "Models/index.js" 
-
-//     "Providers/filesystemProvider.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "Providers/filesystemProvider.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "Providers/index.js" -> "Providers/filesystemProvider.js" 
-
-//     "Providers/index.js" -> "Providers/stubProvider.js" 
-
-//     "Providers/index.js" -> "Providers/webProvider.js" 
-
-//     "Providers/index.js" -> "Providers/zipProvider.js" 
-
-//     "Providers/stubProvider.js" -> "Models/index.js" 
-
-//     "Providers/stubProvider.js" -> "stream" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/Handlers.js" -> "Providers/typed-rest-client/handlers/basiccreds.js" 
-
-//     "Providers/typed-rest-client/Handlers.js" -> "Providers/typed-rest-client/handlers/bearertoken.js" 
-
-//     "Providers/typed-rest-client/Handlers.js" -> "Providers/typed-rest-client/handlers/ntlm.js" 
-
-//     "Providers/typed-rest-client/Handlers.js" -> "Providers/typed-rest-client/handlers/personalaccesstoken.js" 
-
-//     "Providers/typed-rest-client/HttpClient.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/HttpClient.js" -> "http" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/HttpClient.js" -> "https" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/HttpClient.js" -> "url" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/RestClient.js" -> "Providers/typed-rest-client/HttpClient.js" 
-
-//     "Providers/typed-rest-client/RestClient.js" -> "Providers/typed-rest-client/Util.js" 
-
-//     "Providers/typed-rest-client/Util.js" -> "url" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/handlers/ntlm.js" -> "Providers/typed-rest-client/opensource/node-http-ntlm/ntlm.js" 
-
-//     "Providers/typed-rest-client/handlers/ntlm.js" -> "http" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/handlers/ntlm.js" -> "https" [color="grey" penwidth=1.0] 
-
-//     "Providers/typed-rest-client/handlers/ntlm.js" -> "underscore" 
-
-//     "Providers/typed-rest-client/opensource/node-http-ntlm/ntlm.js" -> "crypto" [color="grey" penwidth=1.0] 
-
-//     "Providers/webClient.js" -> "package.json" 
-
-//     "Providers/webClient.js" -> "Providers/typed-rest-client/HttpClient.js" 
-
-//     "Providers/webClientFactory.js" -> "Providers/webClient.js" 
-
-//     "Providers/webClientFactory.js" -> "crypto" [color="grey" penwidth=1.0] 
-
-//     "Providers/webClientFactory.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "Providers/webProvider.js" -> "Engine/logger.js" 
-
-//     "Providers/webProvider.js" -> "Models/index.js" 
-
-//     "Providers/webProvider.js" -> "Providers/webClientFactory.js" 
-
-//     "Providers/webProvider.js" -> "fs" [color="grey" penwidth=1.0] 
-
-//     "Providers/webProvider.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "Providers/webProvider.js" -> "zlib" [color="grey" penwidth=1.0] 
-
-//     "Providers/zipProvider.js" -> "Models/index.js" 
-
-//     "Providers/zipProvider.js" -> "Providers/webClientFactory.js" 
-
-//     "ProvidersTests/filesystemProviderTests.js" -> "Models/index.js" 
-
-//     "ProvidersTests/filesystemProviderTests.js" -> "Providers/index.js" 
-
-//     "ProvidersTests/filesystemProviderTests.js" -> "Store/artifactItemStore.js" 
-
-//     "ProvidersTests/filesystemProviderTests.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "ProvidersTests/filesystemProviderTests.js" -> "path" [color="grey" penwidth=1.0] 
-
-//     "ProvidersTests/filesystemProviderTests.js" -> "stream" [color="grey" penwidth=1.0] 
-
-//     "ProvidersTests/webProviderTests.js" -> "Models/index.js" 
-
-//     "ProvidersTests/webProviderTests.js" -> "Providers/index.js" 
-
-//     "ProvidersTests/webProviderTests.js" -> "Providers/typed-rest-client/HttpClient.js" 
-
-//     "ProvidersTests/webProviderTests.js" -> "assert" [color="grey" penwidth=1.0] 
-
-//     "ProvidersTests/webProviderTests.js" -> "stream" [color="grey" penwidth=1.0] 
-
-//     "Store/artifactItemStore.js" -> "Models/index.js" 
-
-//     "Store/index.js" -> "Store/artifactItemStore.js" 
-
-//     "StoreTests/artifactItemStoreTests.js" -> "Models/index.js" 
-
-//     "StoreTests/artifactItemStoreTests.js" -> "Store/artifactItemStore.js" 
-
-//     "StoreTests/artifactItemStoreTests.js" -> "assert" [color="grey" penwidth=1.0] 
-
-// } `;
 var digraph = graphlibDot.read(dotSrc);
 var graphviz = d3.select("#graph").graphviz();
 var papa_nodes = digraph.children();
@@ -19423,6 +18995,76 @@ function render_graph(papa_nodes, clicked_node, isExpanded) {
     render(dotSrc2);
 }
 
+function render_graph_on_mouseover(hovered_node) {
+    // var nodeEdges = digraph2.nodeEdges(hovered_node);
+  
+    // nodeEdges.map((edge, index) => {
+    //   var edgeLabel = digraph.edge(edge.v, edge.w);
+    //   if (!edgeLabel) {
+    //     edgeLabel = {};
+    //   }
+  
+    //   edgeLabel.color = edge.v == hovered_node ? "red" : "green";
+    //   digraph2.setEdge(edge.v, edge.w, edgeLabel);
+    // });
+  
+    var edges = digraph2.edges();
+    edges.map((edge, index) => {
+      if (edge.v != edge.w) {
+        var edgeLabel = digraph2.edge(edge.v, edge.w);
+        if (!edgeLabel) {
+          edgeLabel = {};
+        }
+  
+        if (edge.v == hovered_node) {
+          edgeLabel.color = "red";
+        }
+        else if (edge.w == hovered_node) {
+          edgeLabel.color = "green";
+        }
+        else {
+          edgeLabel.color = "grey";
+        }
+        
+        digraph2.setEdge(edge.v, edge.w, edgeLabel);
+      }
+    });
+  
+    var dotSrc2 = graphlibDot.write(digraph2);
+    render(dotSrc2);
+  }
+  
+  function render_graph_on_mouseout(hovered_node) {
+    // var nodeEdges = digraph2.nodeEdges(hovered_node);
+  
+    // nodeEdges.map((edge, index) => {
+    //   var edgeLabel = digraph.edge(edge.v, edge.w);
+    //   if (!edgeLabel) {
+    //     edgeLabel = {};
+    //   }
+  
+    //   edgeLabel.color = "black";
+    //   digraph2.setEdge(edge.v, edge.w, edgeLabel);
+    // });
+  
+    var edges = digraph2.edges();
+    edges.map((edge, index) => {
+      if (edge.v != edge.w) {
+        var edgeLabel = digraph2.edge(edge.v, edge.w);
+        if (!edgeLabel) {
+          edgeLabel = {};
+        }
+  
+        edgeLabel.color = "black";
+        
+        digraph2.setEdge(edge.v, edge.w, edgeLabel);
+      }
+    });
+  
+    var dotSrc2 = graphlibDot.write(digraph2);
+    render(dotSrc2);
+  }
+
 function remove_edges(graph) {
     var edges = graph.edges();
     edges.map((value, index) => {
@@ -19446,8 +19088,8 @@ function getParent(name) {
 render_graph(papa_nodes);
 
 function render(dotSrc) {
-    console.log('DOT source =', dotSrc);
-    var dotSrcLines = dotSrc.split('\n');
+    // console.log('DOT source =', dotSrc);
+    // var dotSrcLines = dotSrc.split('\n');
 
     transition1 = d3.transition()
         .delay(1)
@@ -19457,29 +19099,42 @@ function render(dotSrc) {
         .transition(transition1)
         .renderDot(dotSrc);
 
-    nodes = d3.selectAll('.node,.edge');
-    nodes
+    nodesAndEdges = d3.selectAll('.node,.edge');
+    nodesAndEdges
         .on("click", function () {
             var title = d3.select(this).selectAll('title').text().trim();
-            var text = d3.select(this).selectAll('text').text();
-            var id = d3.select(this).attr('id');
-            var class1 = d3.select(this).attr('class');
+            // var text = d3.select(this).selectAll('text').text();
+            // var id = d3.select(this).attr('id');
+            // var class1 = d3.select(this).attr('class');
             var isExpanded = d3.select(this).attr('expanded');
-            if (!isExpanded) {
+            if (!isExpanded){
                 isExpanded = 'false';
             }
-
+            
             var children = digraph.children(title);
             if (isExpanded === 'false') {
                 papa_nodes = papa_nodes.concat(children);
             }
             else {
-                papa_nodes = papa_nodes.filter(function (node) {
-                    return children.indexOf(node) < 0;
+                papa_nodes = papa_nodes.filter(function(node) {
+                return children.indexOf(node) < 0;
                 });
             }
-
-            render_graph(papa_nodes, title, isExpanded);
+            
+            render_graph(papa_nodes, children, title, isExpanded);
             isExpanded === 'true' ? d3.select(this).attr('expanded', 'false') : d3.select(this).attr('expanded', 'true');
         });
+
+    nodes = d3.selectAll('.node');
+    nodes
+        .on("mouseover", function() {
+            var title = d3.select(this).selectAll('title').text().trim();
+            render_graph_on_mouseover(title);
+        });
+
+    nodes
+    .on("mouseout", function() {
+        var title = d3.select(this).selectAll('title').text().trim();            
+        render_graph_on_mouseout(title);
+    });
 }
