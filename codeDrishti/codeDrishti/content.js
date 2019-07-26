@@ -1,30 +1,39 @@
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
-    insertGraph(request.html);
+    if (request.loadButton) {
+      insertButton();
+    } else if (request.html) {
+      insertGraph(request.html);
+    }
   }
 );
 
 var buttonAdded = false;
 
-function insertGraph(dotSrc) {
-
+function insertButton() {
   // Add button to github
-  if (buttonAdded == false) {
+  if (this.buttonAdded == false) {
     var atagList = document.getElementsByTagName("a");
     var sibling;
     for (var i = 0; i < atagList.length; i++) {
-      if (atagList[i].textContent.indexOf("Upload files") > -1) {
+      if (atagList[i].textContent.toLowerCase().indexOf("find file") > -1) {
         sibling = atagList[i];
         break;
       }
     }
 
-    sibling.insertAdjacentHTML("afterend", "<a class='btn btn-sm BtnGroup-item' id='visualize-button'>Envision</a>")
-    buttonAdded = true;
+    sibling.insertAdjacentHTML("beforebegin", "<a class='btn btn-sm BtnGroup-item' id='visualize-button'>Envision</a>")
+    this.buttonAdded = true;
+
+    var visualize_btn = document.getElementById("visualize-button");
+    visualize_btn.onclick = function () {
+      visualize_btn.innerText = "Analyzing...";
+      chrome.runtime.sendMessage({ loadDependency: "true" }, function (response) { });
+    }
   }
-  //
+}
 
-
+function insertGraph(dotSrc) {
   var template = `
     <div id="myModal" class="modal">
       <div class="modal-content">
@@ -49,18 +58,19 @@ function insertGraph(dotSrc) {
   appendScript(chrome.extension.getURL("index.js"));
 
   var modal = document.getElementById("myModal");
+  modal.style.display = "block";
 
   var graph = document.getElementById("graph");
   graph.setAttribute('data-src', dotSrc);
 
   // Get the button that opens the modal
-  var btn = document.getElementById("visualize-button");
-
+  var visualize_btn = document.getElementById("visualize-button");
+  visualize_btn.innerText = "Envision";
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks the button, open the modal 
-  btn.onclick = function () {
+  visualize_btn.onclick = function () {
     modal.style.display = "block";
   }
 
@@ -75,9 +85,4 @@ function insertGraph(dotSrc) {
       modal.style.display = "none";
     }
   }
-}
-
-function getBodyContent(str) {
-  var bodyTags = /<body.*?>([\s\S]*)<\/body>/.exec(str)[1];
-  return bodyTags; // use as innerHTML of <body> 
 }

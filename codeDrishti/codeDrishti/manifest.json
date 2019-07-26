@@ -16,13 +16,10 @@
   "web_accessible_resources": ["index.js"],
   "name": "Code Drishti",
   "permissions": [
-    "file://c:/*",
-    "alarms",
+    "http://codedrishti.japaneast.cloudapp.azure.com/*",
     "tabs",
-    "webNavigation",
-    "*://*.google.com/",
-    "http://localhost:3000/*"
+    "webNavigation"
    ],
-  "version": "4.4.0",
+  "version": "1.0.0",
   "manifest_version": 2
 }
