@@ -1,0 +1,28 @@
+{
+  "background": {
+    "persistent": true,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [ {
+    "js": [ "content.js"],
+    "matches": [ "https://github.com/*" ],
+    "run_at": "document_start",
+    "css": ["content.css"]
+  } ],
+  "description": "Visualize code dependency",
+  "icons": {
+    "128": "icon.png"
+  },
+  "web_accessible_resources": ["index.js"],
+  "name": "Code Drishti",
+  "permissions": [
+    "file://c:/*",
+    "alarms",
+    "tabs",
+    "webNavigation",
+    "*://*.google.com/",
+    "http://localhost:3000/*"
+   ],
+  "version": "4.4.0",
+  "manifest_version": 2
+}
