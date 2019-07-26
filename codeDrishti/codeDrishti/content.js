@@ -55,7 +55,7 @@ function insertGraph(dotSrc) {
     document.body.appendChild(script);
   }
 
-  appendScript(chrome.extension.getURL("index.js"));
+  appendScript(chrome.extension.getURL("index.min.js"));
 
   var modal = document.getElementById("myModal");
   modal.style.display = "block";

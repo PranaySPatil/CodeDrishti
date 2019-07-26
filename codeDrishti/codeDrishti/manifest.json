@@ -13,7 +13,7 @@
   "icons": {
     "128": "icon.png"
   },
-  "web_accessible_resources": ["index.js"],
+  "web_accessible_resources": ["index.min.js"],
   "name": "Code Drishti",
   "permissions": [
     "http://codedrishti.japaneast.cloudapp.azure.com/*",
