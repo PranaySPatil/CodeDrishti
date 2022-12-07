@@ -12,7 +12,7 @@
   "dependencies": {
     "dependency-cruiser": "4.25.0",
     "express": "~4.0.0",
-    "simple-git": "^1.122.0",
+    "simple-git": "^3.15.0",
     "typescript": "^3.5.3"
   }
 }
